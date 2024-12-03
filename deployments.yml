@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Todo-app
+  labels:
+    app: Todo-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: Todo-app
+  template:
+    metadata:
+      labels:
+        app: Todo-app
+    spec:
+      containers:
+      - name: Todo-app
+        image: satyam1602/todo-app-cicd-practice:v1
+        ports:
+        - containerPort: 3000
